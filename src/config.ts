@@ -1,0 +1,33 @@
+export const config = {
+  title: '一封周末邀请',
+  brand: '一封周末邀请',
+  design: 'forest' as const,
+  titleDesign: 'poem' as const,
+  copy: {
+    eyebrow: 'A little invitation · for you',
+    homeTitle: '这个周末，如果你也有空，想约你见个面',
+    question: '这个周末，你有空吗？',
+    hint: '据说这朵绿玫瑰有点偏心。',
+    timeTitle: '那你什么时候方便？',
+    activityTitle: '如果见面，你想做什么？',
+    resultTitle: '好，那就期待见面啦',
+    declinedTitle: '没关系呀，等你有空再说。',
+  },
+  theme: {
+    paper: '#F7F8F1', mist: '#EFF3E8', ink: '#244B3A', sage: '#93AD91',
+    leaf: '#D9E8D2', petal: '#C7E4B7', muted: '#697B6B', line: '#DDE5D8', gold: '#C6AA75',
+  },
+  motion: true,
+  playfulEscape: true,
+  maxNoteLength: 200,
+  activities: [
+    { id: 'dinner', label: '一起吃饭', detail: '好好吃一顿', icon: 'dinner' },
+    { id: 'coffee', label: '喝咖啡', detail: '慢慢聊一会儿', icon: 'coffee' },
+    { id: 'movie', label: '看电影', detail: '共享两小时的故事', icon: 'movie' },
+    { id: 'walk', label: '散步聊天', detail: '走走，吹吹风', icon: 'walk' },
+    { id: 'park', label: '逛公园', detail: '把绿色装进眼睛', icon: 'park' },
+    { id: 'gallery', label: '看展', detail: '发现一点新鲜事', icon: 'gallery' },
+    { id: 'book', label: '去书店', detail: '翻翻书，慢一点', icon: 'book' },
+    { id: 'decide', label: '你来决定', detail: '留一点小小惊喜', icon: 'decide' },
+  ],
+};

@@ -1,0 +1,7 @@
+.reply-feedback { text-align: center; margin: 5px auto 8px; max-width: 290px; }
+.reply-status { color: var(--muted); font-size: 11px; line-height: 1.9; letter-spacing: .3px; }
+.reply-feedback[data-state="pending"] .reply-status::before { content: ''; display: inline-block; width: 5px; height: 5px; background: var(--sage); border-radius: 50%; margin-right: 7px; vertical-align: 2px; animation: reply-pulse 1.2s ease-in-out infinite; }
+.reply-feedback[data-state="failed"] .reply-status { color: var(--validation); }
+.reply-retry { text-decoration: underline; margin: 0 auto; display: block; padding-top: 6px; padding-bottom: 6px; }
+@keyframes reply-pulse { 50% { opacity: .3; } }
+@media (prefers-reduced-motion: reduce) { .reply-status::before { animation: none !important; } }

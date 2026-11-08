@@ -1,0 +1,58 @@
+/* C is the selected default; the review toolbar still allows comparing A/B/C. */
+.home .title-context, .home .title-opener, .home .title-condition, .home .title-invitation { display: block; }
+
+:root[data-title-layout="note"] .home h1,
+:root[data-title-layout="letter"] .home h1,
+:root[data-title-layout="poem"] .home h1 { letter-spacing: 0; line-height: 1.4; font-weight: 400; }
+
+:root[data-title-layout="note"] .home .intro { padding-top: 6px; }
+:root[data-title-layout="note"] .home .eyebrow { margin-bottom: 24px; }
+:root[data-title-layout="note"] .home h1 { font-family: var(--sans); }
+:root[data-title-layout="note"] .title-opener,
+:root[data-title-layout="note"] .title-condition { display: inline; }
+:root[data-title-layout="note"] .title-context { color: var(--muted); font-size: 15px; letter-spacing: .3px; line-height: 1.8; }
+:root[data-title-layout="note"] .title-invitation { margin-top: 11px; font-size: clamp(27px, 7.6vw, 31px); letter-spacing: .35px; line-height: 1.4; }
+:root[data-title-layout="note"] .home .botanical { margin-top: 28px; }
+
+:root[data-title-layout="letter"] .home .intro { max-width: 270px; margin: 0 auto; text-align: left; padding-top: 5px; }
+:root[data-title-layout="letter"] .home .eyebrow { margin-bottom: 21px; font-size: 11px; }
+:root[data-title-layout="letter"] .home h1 { font-family: 'Invitation Serif', var(--serif); }
+:root[data-title-layout="letter"] .title-opener { font-size: 21px; line-height: 1.5; letter-spacing: .2px; }
+:root[data-title-layout="letter"] .title-condition { margin-top: 5px; font: 400 14px/1.8 var(--sans); color: var(--muted); letter-spacing: .3px; }
+:root[data-title-layout="letter"] .title-invitation { margin-top: 13px; font-size: clamp(28px, 8vw, 32px); line-height: 1.4; letter-spacing: .2px; }
+:root[data-title-layout="letter"] .home .botanical { margin-top: 25px; }
+
+:root[data-title-layout="poem"] .home .intro { padding-top: 8px; }
+:root[data-title-layout="poem"] .home .eyebrow { margin-bottom: 25px; }
+:root[data-title-layout="poem"] .home h1 { font-family: 'Invitation Serif', var(--serif); }
+:root[data-title-layout="poem"] .title-opener,
+:root[data-title-layout="poem"] .title-condition { display: inline; }
+:root[data-title-layout="poem"] .title-context { color: var(--muted); font-size: 16px; letter-spacing: .5px; line-height: 1.8; }
+:root[data-title-layout="poem"] .title-invitation { margin-top: 15px; font-size: clamp(29px, 8vw, 33px); line-height: 1.4; letter-spacing: .7px; }
+:root[data-title-layout="poem"] .home .botanical { margin-top: 26px; }
+
+.title-preview { position: sticky; top: 0; z-index: 22; color: #254c3a; background: #edf2e8f5; border-bottom: 1px solid #c9d8c6; backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+.title-preview-inner { max-width: 430px; margin: auto; padding: 10px 14px 9px; }
+.title-preview-heading { display: flex; justify-content: space-between; align-items: center; font-size: 10px; letter-spacing: .3px; margin-bottom: 6px; }
+.title-preview-open { color: #426647; padding: 5px 0 5px 10px; text-underline-offset: 3px; }
+.title-preview-options { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 5px; }
+.title-preview-options button { min-height: 44px; border: 1px solid #cedbc9; border-radius: 7px; padding: 8px 4px; background: #ffffff70; color: #426047; font-size: 11px; white-space: nowrap; }
+.title-preview-options button[aria-pressed="true"] { background: #244b3a; border-color: #244b3a; color: #f2f6e9; }
+.title-preview-options button:focus-visible, .title-preview-open:focus-visible { outline: 2px solid #244b3a; outline-offset: 3px; }
+.title-preview-note { font-size: 10px; line-height: 1.7; color: #536e54; margin-top: 7px; }
+.title-review { scroll-padding-top: 130px; }
+.title-review .music-player { top: calc(134px + env(safe-area-inset-top)); }
+
+@media (max-width: 360px) {
+  :root[data-title-layout="note"] .title-context { font-size: 14px; }
+  :root[data-title-layout="poem"] .title-context { font-size: 15px; }
+}
+@font-face {
+  font-family: 'Invitation Serif';
+  src: url('./assets/title-serif.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  unicode-range: U+4e2a, U+4e5f, U+4f60, U+5468, U+5982, U+60f3, U+6709, U+672b, U+679c, U+7a7a, U+7ea6, U+89c1, U+8fd9, U+9762, U+ff0c;
+}
+

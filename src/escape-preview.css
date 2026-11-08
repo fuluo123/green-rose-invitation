@@ -1,0 +1,22 @@
+.escape-preview { position: sticky; top: 0; z-index: 21; background: #e8eee1f2; color: #244b3a; border-bottom: 1px solid #bfd0b5; backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+.escape-preview-inner { max-width: 430px; margin: auto; padding: 11px 14px 10px; }
+.escape-preview-heading { display: flex; justify-content: space-between; align-items: center; gap: 10px; font-size: 11px; margin-bottom: 9px; }
+.escape-preview-heading a { font-size: 10px; color: #446c4e; text-underline-offset: 3px; }
+.escape-options { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 5px; }
+.escape-options button { min-height: 44px; padding: 5px 2px; border: 1px solid #c7d7c0; border-radius: 7px; background: #ffffff84; color: #315942; font-size: 10px; white-space: nowrap; }
+.escape-options button[aria-pressed="true"] { background: #244b3a; border-color: #244b3a; color: #f2f6e9; }
+.escape-options button:focus-visible, .escape-preview-heading a:focus-visible { outline: 2px solid #244b3a; outline-offset: 3px; }
+.escape-preview-note { min-height: 17px; margin-top: 7px; font-size: 10px; line-height: 1.7; color: #597257; }
+.escape-review .music-player { top: calc(126px + env(safe-area-inset-top)); }
+.letter > .escape-layer { position: absolute; inset: 0; z-index: 4; pointer-events: none; }
+.escape-layer .escape-button { width: 111px; min-width: 111px; pointer-events: auto; transition: top .33s cubic-bezier(.2,.8,.2,1), left .33s cubic-bezier(.2,.8,.2,1), opacity .26s, transform .33s, background .18s; }
+.escape-leaf { display: none; }
+.escape-layer .escape-button.is-leaf { width: 80px; min-width: 80px; min-height: 64px; height: 64px; padding: 0; border: 0; border-radius: 0; transform: rotate(-9deg); color: transparent; background: transparent; box-shadow: none; }
+.escape-layer .escape-button.is-leaf .escape-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+.escape-layer .escape-button.is-leaf .escape-leaf { display: block; width: 80px; height: 64px; object-fit: contain; pointer-events: none; filter: drop-shadow(0 3px 5px #071c172b); }
+.escape-layer .escape-button.is-leaf:focus-visible { color: var(--ink); background: var(--secondary); transform: none; width: 111px; min-width: 111px; height: 48px; min-height: 48px; border: 1px solid var(--line); border-radius: 8px; }
+.escape-layer .escape-button.is-leaf:focus-visible .escape-label { position: static; width: auto; height: auto; clip-path: none; }
+.escape-layer .escape-button.is-leaf:focus-visible .escape-leaf { display: none; }
+.escape-layer .escape-button.is-camouflaged { transform: scale(var(--escape-scale, .85)); opacity: var(--escape-opacity, .8); }
+.escape-layer .escape-button.is-vanished { opacity: 0; transform: scale(.55) rotate(14deg); pointer-events: none; }
+@media (prefers-reduced-motion: reduce) { .escape-layer .escape-button { transition: none; } }

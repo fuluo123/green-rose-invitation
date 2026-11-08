@@ -1,0 +1,25 @@
+{
+  "name": "green-rose-invitation",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview --host 0.0.0.0",
+    "test": "node --experimental-strip-types --test tests/logic.test.ts tests/replies.test.mjs tests/cloudflare.test.mjs",
+    "start": "node scripts/invitation-server.mjs",
+    "test:e2e": "playwright test",
+    "test:production": "node tests/production-smoke.mjs",
+    "cloudflare": "node scripts/cloudflare.mjs",
+    "deploy": "npm run build && node scripts/cloudflare.mjs deploy"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.64.0",
+    "@types/node": "26.6.5",
+    "sharp": "0.35.5",
+    "typescript": "7.0.2",
+    "vite": "8.3.4",
+    "wrangler": "^4.149.0"
+  }
+}

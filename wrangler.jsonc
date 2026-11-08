@@ -1,0 +1,20 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "green-rose-invitation",
+  "main": "cloudflare/worker.mjs",
+  "compatibility_date": "2026-10-12",
+  "account_id": "afbfd4dfd2cefd8b385dbd0f4060fb40",
+  "workers_dev": true,
+  "observability": { "logs": { "enabled": true, "invocation_logs": false } },
+  "routes": [{ "pattern": "rose.shushu.dpdns.org", "custom_domain": true }],
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "run_worker_first": ["/api/*", "/assets/rising-road-*"],
+    "not_found_handling": "404-page"
+  },
+  "durable_objects": {
+    "bindings": [{ "name": "REPLIES", "class_name": "ReplyMailbox" }]
+  },
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["ReplyMailbox"] }]
+}

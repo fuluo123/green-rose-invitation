@@ -1,0 +1,15 @@
+.music-player { position: fixed; top: calc(12px + env(safe-area-inset-top)); right: max(10px, env(safe-area-inset-right)); z-index: 15; }
+.music-toggle { display: grid; place-items: center; width: 44px; height: 44px; padding: 0; border: 1px solid var(--line); border-radius: 50%; background: var(--paper); color: var(--ink); box-shadow: 0 3px 14px #0000000a; cursor: pointer; touch-action: manipulation; }
+.music-toggle:focus-visible { outline: 2px solid var(--sage); outline-offset: 4px; }
+.music-note { width: 19px; height: 19px; }
+.music-bars { display: none; align-items: center; justify-content: center; gap: 3px; height: 20px; }
+.music-bars i { width: 2px; height: 14px; border-radius: 2px; background: currentColor; animation: music-pulse 1.2s ease-in-out infinite alternate; }
+.music-bars i:nth-child(2) { height: 20px; animation-delay: -.6s; }
+.music-bars i:nth-child(3) { height: 10px; animation-delay: -.3s; }
+.is-playing .music-bars { display: flex; }
+.is-playing .music-note { display: none; }
+.music-feedback { position: absolute; top: 53px; right: 0; width: 180px; color: var(--ink); background: var(--paper); font-size: 12px; line-height: 1.6; border-radius: 8px; }
+.music-feedback:not(:empty) { padding: 10px 12px; border: 1px solid var(--line); }
+.design-review .music-player { top: calc(135px + env(safe-area-inset-top)); }
+@keyframes music-pulse { to { transform: scaleY(.4); } }
+@media (prefers-reduced-motion: reduce) { .music-bars i { animation: none; } }

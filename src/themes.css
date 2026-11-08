@@ -1,0 +1,79 @@
+/* Review-only controls are mounted by ?preview=1; theme links show the invitation alone. */
+.design-preview { position: sticky; top: 0; z-index: 20; color: #254c3a; background: #edf2e8f5; border-bottom: 1px solid #c9d8c6; backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+.design-preview-inner { max-width: 430px; margin: auto; padding: 12px 14px 10px; }
+.design-caption { display: flex; justify-content: space-between; align-items: center; font-size: 10px; letter-spacing: .5px; margin-bottom: 8px; }
+.design-open { color: #426647; text-underline-offset: 3px; padding: 4px 0 4px 12px; }
+.design-options { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 5px; }
+.design-option { min-height: 44px; padding: 8px 5px; border: 1px solid #cedbc9; border-radius: 7px; display: flex; align-items: center; justify-content: center; gap: 6px; font-size: 11px; white-space: nowrap; background: #ffffff70; color: #426047; }
+.design-option[aria-pressed="true"] { background: #244b3a; border-color: #244b3a; color: #f2f6e9; }
+.design-option:focus-visible, .design-open:focus-visible { outline: 2px solid #244b3a; outline-offset: 3px; }
+.design-swatch { width: 13px; height: 13px; flex: 0 0 13px; border-radius: 50%; border: 1px solid #ffffff90; }
+.swatch-sage { background: #b6cba5; }
+.swatch-rose { background: radial-gradient(circle at 35% 35%, #f0f4cd 12%, #a8ba79 60%, #76935f); }
+.swatch-forest { background: #153e30; }
+.design-note { font-size: 10px; margin-top: 8px; line-height: 1.7; color: #536e54; }
+.design-review { scroll-padding-top: 125px; }
+
+:root[data-design] {
+  --primary-bg: #254f37; --primary-text: #f2f6e9; --primary-hover: #376343;
+  --surface: #f0f5e7; --secondary: #d9e6cb; --secondary-hover: #cbdcb9;
+  --selected: #c3d7b1; --selected-border: #6e8b5a; --check-border: #a4bc90;
+  --validation: #765036; --icon: #537641; --divider: #9eb689;
+}
+:root[data-design="sage"] {
+  --paper: #e0ebd5; --mist: #becfac; --ink: #244b32; --muted: #526a47;
+  --sage: #7f9f6b; --line: #b8ceaa; --leaf: #d0e1c1; --gold: #a79869;
+}
+[data-design="sage"] .letter { background: linear-gradient(145deg, #e7efdb 0%, #dce8cf 64%, #cfdfbf 100%); border-color: #adc399; box-shadow: 0 22px 85px #244b321c; }
+[data-design="sage"] body { background: radial-gradient(ellipse at 50% 30%, #d6e3c6, #acbf98); }
+[data-design="sage"] .hero-rose { filter: drop-shadow(0 10px 16px #3a633819); }
+
+:root[data-design="rose"] {
+  --paper: #e7edd5; --mist: #c2d19f; --ink: #29492a; --muted: #506644;
+  --sage: #82985e; --line: #b4c79b; --leaf: #d9e5c3; --gold: #a69761;
+  --primary-bg: #385a2f; --primary-hover: #476b37; --surface: #eef3e4eb;
+  --secondary: #e7eed4d9; --secondary-hover: #d6e2bf; --selected: #cbdab3;
+}
+[data-design="rose"] body { background: #c2d19f; }
+[data-design="rose"] body::before { z-index: 0; width: 900px; height: 1300px; top: -260px; left: calc(50% - 830px); background: url('./assets/rose-fine-art.webp') center / contain no-repeat; transform: rotate(-25deg); filter: blur(22px) saturate(1.15); opacity: .52; }
+[data-design="rose"] body::after { z-index: 0; width: 750px; height: 1100px; right: calc(50% - 820px); bottom: -300px; background: url('./assets/rose-fine-art.webp') center / contain no-repeat; transform: rotate(28deg); filter: blur(26px); opacity: .45; }
+[data-design="rose"] #app { position: relative; z-index: 1; }
+[data-design="rose"] .letter { background: linear-gradient(160deg, #eaf0dce8, #e7efd5dc 42%, #dbe6c5e8); border-color: #d9e5bf; box-shadow: 0 22px 85px #344c2d24; }
+[data-design="rose"] .letter::before { content: ''; position: absolute; z-index: 0; pointer-events: none; width: 790px; height: 1185px; left: -400px; top: -72px; background: url('./assets/rose-fine-art.webp') center / contain no-repeat; filter: blur(13px) saturate(1.2); transform: rotate(-22deg); opacity: .36; }
+[data-design="rose"] .hero-rose { filter: drop-shadow(0 12px 18px #46652b20); }
+
+:root[data-design="forest"] {
+  color-scheme: dark;
+  --paper: #153b2d; --mist: #102d23; --ink: #e4ecd4; --muted: #b6c8a7;
+  --sage: #a8c48c; --line: #41634b; --leaf: #78966b; --gold: #bbba85;
+  --primary-bg: #dce8ba; --primary-text: #24402b; --primary-hover: #edf3d5;
+  --surface: #244a37; --secondary: #244b38; --secondary-hover: #325b43;
+  --selected: #3e6549; --selected-border: #a7c184; --check-border: #779569;
+  --validation: #ebc89b; --icon: #bdcf9e; --divider: #6a885e;
+}
+[data-design="forest"] body { background: radial-gradient(ellipse at 50% 35%, #264832, #0d281e 74%); }
+[data-design="forest"] .letter { background: radial-gradient(ellipse at 50% 40%, #36543a 0%, #1c402f 44%, #15382a 85%); border-color: #476442; box-shadow: 0 24px 100px #071c1755; }
+[data-design="forest"] .letter::after { opacity: .24; }
+[data-design="forest"] .hero-rose { filter: drop-shadow(0 0 32px #d4e2a32e); }
+[data-design="forest"] h1 { color: #e7eccf; }
+[data-design="forest"] .letter-header { color: var(--muted); }
+
+/* Apply the same palette to the date, activities, and result pages. */
+[data-design] .primary { background: var(--primary-bg); border-color: var(--primary-bg); color: var(--primary-text); }
+[data-design] .secondary { background: var(--secondary); border-color: var(--line); }
+[data-design] .period > span, [data-design] .activity-body, [data-design] .text-input, [data-design] textarea { background: var(--surface); }
+[data-design] .other-time { background: var(--surface); }
+[data-design] .period input:checked + span, [data-design] .activity input:checked + span, [data-design] .other-time:has(input:checked) { background: var(--selected); border-color: var(--selected-border); }
+[data-design] .round-check, [data-design] .activity-check { border-color: var(--check-border); }
+[data-design] .activity input:checked + span .activity-check { background: var(--primary-bg); border-color: var(--primary-bg); color: var(--primary-text); }
+[data-design] .activity-icon svg { color: var(--icon); }
+[data-design] .validation { color: var(--validation); }
+[data-design] .plan { border-color: var(--divider); }
+@media (hover: hover) {
+  [data-design] .primary:hover { background: var(--primary-hover); }
+  [data-design] .secondary:hover { background: var(--secondary-hover); }
+}
+@media (max-width: 480px) {
+  [data-design] .letter { box-shadow: none; }
+  [data-design="rose"] body::before, [data-design="rose"] body::after { display: none; }
+}
